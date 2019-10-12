@@ -1,0 +1,27 @@
+{
+  "name": "1on1",
+  "version": "1.0.0",
+  "description": "Because link after link gets tedious enough.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirTangent/1on1.git"
+  },
+  "keywords": [
+    "resource",
+    "share"
+  ],
+  "author": "Wyatt Phillips",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SirTangent/1on1/issues"
+  },
+  "homepage": "https://github.com/SirTangent/1on1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
