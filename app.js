@@ -46,10 +46,15 @@ io.on('connection', function (socket) {
     socket.authed = false;
     socket.code = null;
     console.log(`made socket connection: ${socket.id}`);
+
+    socket.on('bindCode', function (code) {
+        socket.code = code;
+    });
+
     socket.on('auth', function (data) {
         console.log(`${socket.id}: ${socket.authed}`);
         stream.findOne({
-            code: data.code
+            code: socket.code
         })
             .then(this_stream => {
                 if(this_stream && this_stream.passphrase == data.passphrase){
@@ -83,7 +88,10 @@ io.on('connection', function (socket) {
                     this_stream.msg.unshift(newMSG);
                     this_stream.save()
                         .then(this_stream => {
-
+                            socket.emit(socket.code, {
+                                method: 'add',
+                                content: this_stream.msg[0]
+                            })
                         })
                 })
         }

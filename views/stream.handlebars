@@ -8,16 +8,15 @@
     <p class="error" style="display: none">Invalid Credentials!</p>
     <h1 class="msg-last">
         {{#if msg}}
-            {{msg.[0]}}
+            {{msg.[0].content}}
         {{else}}
             [No Messages]
         {{/if}}
-
     </h1>
     <div class="prev-msgs">
         {{#each msg}}
             {{#unless @first}}
-                <h3>{{this}}</h3>
+                <h3>{{this.content}}</h3>
             {{/unless}}
         {{/each}}
     </div>

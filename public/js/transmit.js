@@ -1,13 +1,14 @@
 //Make connection
-var socket = io.connect('http://localhost:8000');
 var code = window.location.pathname.replace(/\//g, "");
+var socket = io.connect('http://localhost:8000');
 var pass = "";
 var isHost = false;
+
+socket.emit('bindCode', code);
 
 function authorize(e) {
     pass = document.querySelector('#passphrase').value;
     data = {
-        code: code,
         passphrase: pass
     };
     console.log(data);
@@ -40,7 +41,17 @@ socket.on('auth_resp', function (value) {
    }
 });
 
-//
+// Update Listener
+socket.on(code, function (data) {
+    if(data.method == 'add'){
+        let temp = document.querySelector('.msg-last').innerHTML;
+        document.querySelector('.msg-last').innerHTML = data.content.content;
+        let node = document.createElement("h3");
+        let textnode = document.createTextNode(temp);
+        node.appendChild(textnode);
+        document.querySelector('.prev-msgs').prepend(node);
+    }
+});
 
 document.querySelector('#host').addEventListener('click', e => authorize(e));
 document.querySelector('#add').addEventListener('click', e => addMSG(e));
