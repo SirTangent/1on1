@@ -46,10 +46,14 @@ socket.on(code, function (data) {
     if(data.method == 'add'){
         let temp = document.querySelector('.msg-last').innerHTML;
         document.querySelector('.msg-last').innerHTML = data.content.content;
-        let node = document.createElement("h3");
-        let textnode = document.createTextNode(temp);
-        node.appendChild(textnode);
-        document.querySelector('.prev-msgs').prepend(node);
+        if(!document.querySelector('.msg-last').classList.contains('no-msg')){
+            let node = document.createElement("h3");
+            let textnode = document.createTextNode(temp);
+            node.appendChild(textnode);
+            document.querySelector('.prev-msgs').prepend(node);
+        } else {
+            document.querySelector('.msg-last').classList.remove('no-msg');
+        }
     }
 });
 
