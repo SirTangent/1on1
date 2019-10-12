@@ -9,11 +9,15 @@ h1 {
     font-weight: lighter;
 }
 
-.feed {
+.content {
     padding-top: 25vh;
     text-align: center;
 }
 
 .msg-last {
     margin-top: 0em;
+}
+
+.about-title {
+    margin: 0em;
 }
