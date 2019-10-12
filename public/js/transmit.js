@@ -19,7 +19,18 @@ function authorize(e) {
 
 // Auth response
 socket.on('auth_resp', function (value) {
-   console.log(value);
+   isHost = value;
+   console.log(isHost);
+   if(isHost){
+       document.querySelector('#host-auth').style.display = "none";
+       document.querySelector('#msg-add').style.display = "block";
+       document.querySelector('.error').style.display = "none";
+       document.querySelector('#host-indicator').style.display = "inline"
+   } else {
+       document.querySelector('.error').style.display = "block"
+   }
 });
+
+//
 
 document.querySelector('#host').addEventListener('click', e => authorize(e));

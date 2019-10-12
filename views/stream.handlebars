@@ -1,5 +1,11 @@
 <div class="content">
-    <h4>Stream ID >> <u>{{stream_id}}</u></h4>
+    <h4>Stream ID >> <u>{{stream_id}}</u><span id="host-indicator" style="display: none; padding-left: 15px; color: lightgreen">[HOST MODE]</span></h4>
+    <form id="msg-add" style="display: none" class="barrier-bottom" action="javascript:void(0);">
+        Add Message:<br>
+        <input type="password" name="msg" id="msg">
+        <input type="submit" value="Add" id="add">
+    </form>
+    <p class="error" style="display: none">Invalid Credentials!</p>
     <h1 class="msg-last">
         {{#if msg}}
             {{msg.[0]}}
@@ -17,7 +23,7 @@
     </div>
 
     <div class="footer">
-        <form class="barrier-bottom" action="javascript:void(0);">
+        <form id="host-auth" style="display: block" class="barrier-bottom" action="javascript:void(0);">
             Passphrase:<br>
             <input type="password" name="passphrase" id="passphrase">
             <input type="submit" value="Host" id="host">
