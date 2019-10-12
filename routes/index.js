@@ -1,5 +1,9 @@
 module.exports = function () {
-    var route = require('express').Router();
+    const route = require('express').Router();
+
+    // Import mongoose stream model
+    const mongoose = require('mongoose');
+    const stream = mongoose.model('stream');
 
     // Index Page Route
     route.get('/', (req, res) => {
