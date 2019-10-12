@@ -8,6 +8,9 @@ var app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+// Serve static content
+app.use(express.static('public'));
+
 // Get routes
 var indexRoutes = require('./routes/index');
 
