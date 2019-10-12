@@ -1,9 +1,33 @@
+html {
+    height: calc(100vh - 96px);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
 body {
     background: linear-gradient(-45deg, #cc2b5e, #753a88) no-repeat center center fixed;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 h1 {
     font-size: 5em;
@@ -46,11 +70,33 @@ a {
 
 .footer {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: black;
+    text-align: center;
 }
 
 .error {
     color: lightcoral;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    back
+}
+
+input {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    opacity: 30%;
+}
+
+#create {
+    padding: 10px 25px;
 }
