@@ -1,6 +1,6 @@
 //Make connection
 var code = window.location.pathname.replace(/\//g, "");
-var socket = io.connect('http://localhost:8000');
+var socket = io.connect();
 var pass = "";
 var isHost = false;
 
