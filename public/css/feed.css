@@ -1,0 +1,19 @@
+body {
+    background: linear-gradient(-45deg, #cc2b5e, #753a88) no-repeat center center fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 5em;
+    font-weight: lighter;
+}
+
+.feed {
+    padding-top: 25vh;
+    text-align: center;
+}
+
+.msg-last {
+    margin-top: 0em;
+}
