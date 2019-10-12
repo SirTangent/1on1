@@ -62,3 +62,8 @@ typings/
 
 # Webstorm IDE
 .idea/
+
+#Thumbnail Images
+thumb1.PNG
+thumb2.PNG
+thumb3.PNG
