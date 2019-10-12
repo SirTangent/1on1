@@ -9,6 +9,10 @@ h1 {
     font-weight: lighter;
 }
 
+a {
+    color: white;
+}
+
 .content {
     padding-top: 25vh;
     text-align: center;
@@ -20,4 +24,24 @@ h1 {
 
 .about-title {
     margin: 0em;
+}
+
+.light {
+    font-weight: lighter;
+}
+
+.title-box {
+    border-bottom: 1px solid;
+    display: inline-block;
+}
+
+.barrier {
+    padding: 40px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
