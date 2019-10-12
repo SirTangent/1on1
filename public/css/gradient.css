@@ -39,6 +39,10 @@ a {
     padding: 40px;
 }
 
+.barrier-bottom {
+    padding-bottom: 20px;
+}
+
 .footer {
     position: absolute;
     bottom: 10px;

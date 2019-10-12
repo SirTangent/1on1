@@ -10,7 +10,8 @@ module.exports = function () {
     // Stream Page Route
     route.get('/:id', (req, res) => {
         // steam_id is random example.
-        res.render('stream', {layout: 'gradient', stream_id: req.params.id});
+        let msg = [];
+        res.render('stream', {layout: 'gradient', stream_id: req.params.id, msg: msg});
     });
 
     // About Page Route
