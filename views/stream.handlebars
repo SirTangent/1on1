@@ -1,27 +1,34 @@
 <div class="content">
-    <h4>Stream ID >> <u>{{stream_id}}</u></h4>
+    <h4>Stream ID >> <u>{{stream_id}}</u><span id="host-indicator" style="display: none; padding-left: 15px; color: lightgreen">[HOST MODE]</span></h4>
+    <form id="msg-add" style="display: none" class="barrier-bottom" action="javascript:void(0);">
+        Add Message:<br>
+        <input type="text" name="msg" id="msg">
+        <input type="submit" value="Add" id="add">
+    </form>
+    <p class="error" style="display: none">Invalid Credentials!</p>
     <h1 class="msg-last">
         {{#if msg}}
-            {{msg.[0]}}
+            {{msg.[0].content}}
         {{else}}
             [No Messages]
         {{/if}}
-
     </h1>
     <div class="prev-msgs">
         {{#each msg}}
             {{#unless @first}}
-                <h3>{{this}}</h3>
+                <h3>{{this.content}}</h3>
             {{/unless}}
         {{/each}}
     </div>
 
     <div class="footer">
-        <form class="barrier-bottom" action="">
+        <form id="host-auth" style="display: block" class="barrier-bottom" action="javascript:void(0);">
             Passphrase:<br>
-            <input type="password" name="passphrase">
-            <input type="submit" value="Control">
+            <input type="password" name="passphrase" id="passphrase">
+            <input type="submit" value="Host" id="host">
         </form>
         <a href="/">Start a Stream</a> | <a href="/f/about">About 1on1</a>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+<script src="/js/transmit.js"></script>
