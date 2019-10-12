@@ -24,7 +24,7 @@
         if(code.match('^[a-zA-Z0-9_.-]*$')) {
             window.location.href = code;
         } else {
-            alert("Invalid Code!")
+            $(".error").html("Invalid Code! Special characters prohibited!");
         }
     })
 </script>
