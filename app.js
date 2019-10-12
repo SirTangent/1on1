@@ -88,7 +88,7 @@ io.on('connection', function (socket) {
                     this_stream.msg.unshift(newMSG);
                     this_stream.save()
                         .then(this_stream => {
-                            socket.emit(socket.code, {
+                            io.sockets.emit(socket.code, {
                                 method: 'add',
                                 content: this_stream.msg[0]
                             })
