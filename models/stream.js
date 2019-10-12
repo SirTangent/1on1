@@ -15,9 +15,9 @@ const StreamSchema = new Schema({
         default: Date.now
     },
     msg: [{
-        order: {
-            type: Number,
-            required: true
+        created: {
+            type: Date,
+            default: Date.now
         },
         content: {
             type: String,

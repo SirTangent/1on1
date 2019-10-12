@@ -44,6 +44,7 @@ var io = socket(server);
 
 io.on('connection', function (socket) {
     socket.authed = false;
+    socket.code = null;
     console.log(`made socket connection: ${socket.id}`);
     socket.on('auth', function (data) {
         console.log(`${socket.id}: ${socket.authed}`);
@@ -53,6 +54,7 @@ io.on('connection', function (socket) {
             .then(this_stream => {
                 if(this_stream && this_stream.passphrase == data.passphrase){
                     socket.authed = true;
+                    socket.code = this_stream.code;
                     socket.emit('auth_resp', true);
                 } else {
                     socket.authed = false;
@@ -64,6 +66,28 @@ io.on('connection', function (socket) {
                 socket.authed = false;
                 socket.emit('auth_resp', false);
             })
-})});
+    })
+
+    socket.on('sendMSG', function (data) {
+        // Check if socket has authority
+        if(socket.authed){
+            // Add new message to DB
+            stream.findOne({
+                code: socket.code
+            })
+                .then(this_stream => {
+                    const newMSG = {
+                        content: data.content
+                    };
+
+                    this_stream.msg.unshift(newMSG);
+                    this_stream.save()
+                        .then(this_stream => {
+
+                        })
+                })
+        }
+    })
+});
 
 

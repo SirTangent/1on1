@@ -17,6 +17,15 @@ function authorize(e) {
     //})
 }
 
+function addMSG(e) {
+    let msg = document.querySelector('#msg').value;
+    console.log(msg);
+
+    socket.emit('sendMSG', {
+        content: msg
+    });
+}
+
 // Auth response
 socket.on('auth_resp', function (value) {
    isHost = value;
@@ -34,3 +43,4 @@ socket.on('auth_resp', function (value) {
 //
 
 document.querySelector('#host').addEventListener('click', e => authorize(e));
+document.querySelector('#add').addEventListener('click', e => addMSG(e));
