@@ -6,13 +6,11 @@
         <input type="submit" value="Add" id="add">
     </form>
     <p class="error" style="display: none">Invalid Credentials!</p>
-    <h1 class="msg-last">
         {{#if msg}}
-            {{msg.[0].content}}
+            <h1 class="msg-last">{{msg.[0].content}}</h1>
         {{else}}
-            [No Messages]
+            <h1 class="msg-last no-msg">[No Messages]</h1>
         {{/if}}
-    </h1>
     <div class="prev-msgs">
         {{#each msg}}
             {{#unless @first}}
