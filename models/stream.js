@@ -6,6 +6,10 @@ const StreamSchema = new Schema({
         type: String,
         required: true
     },
+    passphrase: {
+      type: String,
+      required: true
+    },
     created: {
         type: Date,
         default: Date.now
