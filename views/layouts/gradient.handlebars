@@ -13,4 +13,19 @@
     {{{body}}}
 
 </body>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+</script>
+<script>
+    $("#submit_code").on("click", function (e) {
+        let code = $("#stream_code").val();
+        if(code.match('^[a-zA-Z0-9_.-]*$')) {
+            window.location.href = code;
+        } else {
+            alert("Invalid Code!")
+        }
+    })
+</script>
 </html>
