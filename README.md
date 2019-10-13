@@ -1,7 +1,7 @@
 # 1on1
 Because links are too long!
 
-Developed @ PolyHack.
+Developed @ [PolyHack](https://polyhack.devpost.com/).
 
 Active Deploy: https://one-on-1.herokuapp.com/
 
