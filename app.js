@@ -52,7 +52,6 @@ io.on('connection', function (socket) {
     });
 
     socket.on('auth', function (data) {
-        console.log(`${socket.id}: ${socket.authed}`);
         stream.findOne({
             code: socket.code
         })

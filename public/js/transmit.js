@@ -11,7 +11,6 @@ function authorize(e) {
     data = {
         passphrase: pass
     };
-    console.log(data);
     socket.emit('auth', data);
     //socket.emit('host', {
     //    code: window.
@@ -20,7 +19,6 @@ function authorize(e) {
 
 function addMSG(e) {
     let msg = document.querySelector('#msg').value;
-    console.log(msg);
 
     socket.emit('sendMSG', {
         content: msg
@@ -30,7 +28,6 @@ function addMSG(e) {
 // Auth response
 socket.on('auth_resp', function (value) {
    isHost = value;
-   console.log(isHost);
    if(isHost){
        document.querySelector('#host-auth').style.display = "none";
        document.querySelector('#msg-add').style.display = "block";
