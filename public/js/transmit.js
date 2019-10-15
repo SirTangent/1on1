@@ -34,7 +34,7 @@ socket.on('auth_resp', function (value) {
        document.querySelector('.error').style.display = "none";
        document.querySelector('#host-indicator').style.display = "inline"
    } else {
-       document.querySelector('.error').style.display = "block"
+       document.querySelector('.error').style.display = "inline"
    }
 });
 
