@@ -1,5 +1,5 @@
 //Make connection
-var code = window.location.pathname.replace(/\//g, "");
+var code = window.location.pathname.replace(/\//g, "").toLowerCase();
 var socket = io.connect();
 var pass = "";
 var isHost = false;
@@ -12,9 +12,6 @@ function authorize(e) {
         passphrase: pass
     };
     socket.emit('auth', data);
-    //socket.emit('host', {
-    //    code: window.
-    //})
 }
 
 function addMSG(e) {
