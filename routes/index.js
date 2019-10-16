@@ -27,12 +27,13 @@ module.exports = function () {
     // Stream Page Route
     route.get('/:id', (req, res) => {
         // Check if stream exists on db
+        let id = req.params.id.toLowerCase();
         stream.findOne({
-            code: req.params.id
+            code: id
         })
             .then(this_stream => {
                 if(this_stream){
-                    res.render('stream', {layout: 'gradient', stream_id: req.params.id, msg: this_stream.msg});
+                    res.render('stream', {layout: 'gradient', stream_id: id, msg: this_stream.msg});
                 } else {
                     res.render('index', {layout: 'gradient', error: 'Invalid Code!'});
                 }
