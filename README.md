@@ -3,7 +3,7 @@ Because links are too long!
 
 Developed @ [PolyHack](https://polyhack.devpost.com/).
 
-Active Deploy: https://one-on-1.herokuapp.com/
+Active Deploy: http://1on1.tech/
 
 ## Installing
 
