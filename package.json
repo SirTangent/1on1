@@ -23,7 +23,7 @@
   "homepage": "https://github.com/SirTangent/1on1#readme",
   "dependencies": {
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "mongoose": "^5.7.4",
     "socket.io": "^2.3.0"
